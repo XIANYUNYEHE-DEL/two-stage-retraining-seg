@@ -6,7 +6,7 @@
 
 #### Enviroment
 - Ubuntu 20.04.1 LTS
-- Python 3.6
+- Python 3.6(If nnU-Net requires a higher version, we recommend creating two separate environments)
 - Pytorch 1.11.0+
 - CUDA 11.7
 
@@ -36,4 +36,4 @@ pip install -e .
 
 ## Weak label information
 
-Flare2023 Datasets 2200 cases label information are summarized in `label_num.npy`
+Flare2023 Datasets 2200 cases label information are summarized in `label_num.npy`. You can use this file to select 222 strong label cases(Key:'14') in 2200 weak label cases.
