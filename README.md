@@ -33,3 +33,7 @@ pip install -r requirements.txt
 cd nnUNet
 pip install -e .
 ```
+
+## Weak label information
+
+Flare2023 Datasets 2200 cases label information are summarized in `label_num.npy`
