@@ -45,10 +45,8 @@ FINE_MODEL:
   WEIGHT_DIR: None
 
 TESTING:
-  # COARSE_MODEL_WEIGHT_DIR: './weight/coarse/best_model.pt'
-  COARSE_MODEL_WEIGHT_DIR: '/public/datasets/cross_unet/weight/fold0/flare2023_down_coarse_2200_tumor_0.005.pth'
-  # FINE_MODEL_WEIGHT_DIR: '/public/datasets/cross_unet/weight/fold0/end_flare2023_down_1800_aug.pth'
-  FINE_MODEL_WEIGHT_DIR: '/public/datasets/cross_unet/weight/fold0/flare2023_down_4000_aug.pth'
+  COARSE_MODEL_WEIGHT_DIR: './weight/coarse/best_model.pt'
+  FINE_MODEL_WEIGHT_DIR: '/public/datasets/cross_unet/weight/fold0/end_flare2023_down_1800_aug.pth'
   NUM_WORKER: 3
   BATCH_SIZE: 1
   IS_FP16: True
