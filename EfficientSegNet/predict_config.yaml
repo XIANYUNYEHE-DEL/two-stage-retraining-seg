@@ -4,9 +4,9 @@ ENVIRONMENT:
 DATA_LOADER:
   TEST_IMAGE_DIR: '/workspace/inputs/'
   TEST_SERIES_IDS_TXT: None
-  LABEL_INDEX: [1, 2, 3, 4]
-  LABEL_NUM: [1, 2, 1, 1]
-  LABEL_NAME: ['Liver', 'Kidney', 'Spleen', 'Pancreas']
+  LABEL_INDEX: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+  LABEL_NUM: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+  LABEL_NAME: ['Liver', 'Right Kidney', 'Spleen', 'Pancreas', 'Aorta', 'Inferior Vena Cava', 'Right Adrenal Gland', 'Left Adrenal Gland', 'Gallbladder', 'Esophagus', 'Stomach', 'Duodenum', 'Left kidney', 'Tumor']
   IS_NORMALIZATION_HU: True
   IS_NORMALIZATION_DIRECTION: True
   WINDOW_LEVEL: [-325, 325]
@@ -15,8 +15,8 @@ DATA_LOADER:
 COARSE_MODEL:
   META_ARCHITECTURE: 'UNet'
   INPUT_SIZE: [160, 160, 160]
-  NUM_CLASSES: 4
-  NUM_CHANNELS: [8, 16, 32, 64, 128]
+  NUM_CLASSES: 14
+  NUM_CHANNELS: [16, 32, 64, 128, 256]
   ENCODER_CONV_BLOCK: 'ResFourLayerConvBlock'
   DECODER_CONV_BLOCK: 'ResTwoLayerConvBlock'
   CONTEXT_BLOCK: None
@@ -31,7 +31,7 @@ FINE_MODEL:
   AUXILIARY_TASK: False
   AUXILIARY_CLASS: 1
   INPUT_SIZE: [192, 192, 192]
-  NUM_CLASSES: 4
+  NUM_CLASSES: 14
   NUM_BLOCKS: [2, 2, 2, 2, 2]
   DECODER_NUM_BLOCK: 1
   NUM_CHANNELS: [16, 32, 64, 128, 256]
@@ -45,8 +45,10 @@ FINE_MODEL:
   WEIGHT_DIR: None
 
 TESTING:
-  COARSE_MODEL_WEIGHT_DIR: './FlareSeg/model_weights/base_coarse_model/best_model.pt'
-  FINE_MODEL_WEIGHT_DIR: './FlareSeg/model_weights/efficient_fine_model/best_model.pt'
+  # COARSE_MODEL_WEIGHT_DIR: './weight/coarse/best_model.pt'
+  COARSE_MODEL_WEIGHT_DIR: '/public/datasets/cross_unet/weight/fold0/flare2023_down_coarse_2200_tumor_0.005.pth'
+  # FINE_MODEL_WEIGHT_DIR: '/public/datasets/cross_unet/weight/fold0/end_flare2023_down_1800_aug.pth'
+  FINE_MODEL_WEIGHT_DIR: '/public/datasets/cross_unet/weight/fold0/flare2023_down_4000_aug.pth'
   NUM_WORKER: 3
   BATCH_SIZE: 1
   IS_FP16: True
