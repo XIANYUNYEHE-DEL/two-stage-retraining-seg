@@ -12,7 +12,7 @@ DATA_PREPARE:
   DEFAULT_TRAIN_DB: 'db/seg_train_database'
   DEFAULT_VAL_DB: 'db/seg_val_database'
   OUT_DIR: None
-  MASK_LABEL: [1, 2, 3, 4]
+  MASK_LABEL: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
   EXTEND_SIZE: 20
   VAL_RATIO: 0.2
   IS_SMOOTH_MASK: False
